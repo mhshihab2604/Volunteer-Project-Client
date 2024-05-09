@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import useAuth from "../useAuth/useAuth";
 import { useState } from "react";
-import myImage from "../../assets/aura-removebg-preview.png"
+import myImage from "../../assets/logo22.png"
 const Header = () => {
   const { logout, user } = useAuth();
   const [showDropdown, setShowDropdown] = useState(false)
@@ -53,11 +53,10 @@ const Header = () => {
                 </Link>
             </ul>
           </div>
-          <div className="flex -space-x-6 items-center">
+          <div className="flex justify-center -space-x-6 items-center">
             <img className="w-24" src={myImage} alt="" />
-            
             <div className="bg-gradient-to-r from-[#03cdb5] to-[#C8143A] text-transparent bg-clip-text">
-                <a className=" text-sm lg:text-2xl font-extrabold">Volunify</a>
+                <a className=" text-sm lg:text-xl font-extrabold">Volunify</a>
             </div>
           </div>
         </div>
