@@ -15,6 +15,9 @@ import FirebaseProvider from './FirebaseProvider/FirebaseProvider';
 import UpdateProfile from './Components/UpdateProfile/UpdateProfile';
 import UserProfile from './Components/UserProfile/UserProfile';
 import { Toaster } from 'sonner';
+import AddVolunteer from './Components/AddVolunteer/AddVolunteer';
+import MyPost from './Components/MyPost/MyPost';
+import VolunteerRequest from './Components/VolunteerRequest/VolunteerRequest';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +44,18 @@ const router = createBrowserRouter([
       {
         path: "/userProfile",
         element: <UserProfile></UserProfile>
+      },
+      {
+        path: "/addVolunteer",
+        element: <AddVolunteer></AddVolunteer>
+      },
+      {
+        path: "/myPost",
+        element: <MyPost></MyPost>
+      },
+      {
+        path: "/volunteerRequest",
+        element: <VolunteerRequest></VolunteerRequest>
       },
     ]
   },

@@ -12,7 +12,7 @@ const Header = () => {
   };
   return (
     <div>
-      <div className="navbar p-0">
+      <div className="navbar pt-0 pb-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -42,11 +42,14 @@ const Header = () => {
                 <Link to="/" className="flex">
                     <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Home</a>
                 </Link>
+                <Link to="/NeedVolunteer" className="flex">
+                    <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Need Volunteer</a>
+                </Link>
+                <Link to="/userProfile" className="flex">
+                    <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">My Profile</a>
+                </Link>
                 <Link to="/register" className="flex">
                     <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Register</a>
-                </Link>
-                <Link to="/login" className="flex">
-                    <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Login</a>
                 </Link>
                 <Link to="/updateProfile" className="flex">
                     <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Update Profile</a>
@@ -65,11 +68,14 @@ const Header = () => {
             <Link to="/" className="flex">
                 <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Home</a>
             </Link>
+            <Link to="/NeedVolunteer" className="flex">
+                <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Need Volunteer</a>
+            </Link>
+            <Link to="/userProfile" className="flex">
+                <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">My Profile</a>
+            </Link>
             <Link to="/register" className="flex">
                 <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Register</a>
-            </Link>
-            <Link to="/login" className="flex">
-                <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Login</a>
             </Link>
             <Link to="/updateProfile" className="flex">
                 <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Update Profile</a>
@@ -80,17 +86,21 @@ const Header = () => {
           <div className="navbar-end relative space-x-2">
             <div className="lg:tooltip lg:tooltip-left" data-tip={`${user.displayName}`}>
               <img
-                className="w-10 h-10 rounded-full"
+                className="w-10 h-10 rounded-full border-2"
                 src={user.photoURL}
                 alt=""
                 onClick={() => setShowDropdown(!showDropdown)}
               />
             </div>
             <div className={showDropdown ? "userDropDown showDropdown space-y-2" : "userDropDown"} >
-                <h1 className="text-xl font-medium">Name:{user.displayName}</h1>
-                <h1 className="font-medium">{user.email}</h1>
-                <Link to="/userProfile">
-                  <button className="btn bg-[#38AA95] text-white border-none">User Profile</button>
+                <Link to="/addVolunteer">
+                  <a className="btn text-black border-none">Add Volunteer Post</a>
+                </Link>
+                <Link to="/myPost">
+                  <a className="btn text-black border-none">Manage My Post</a>
+                </Link>
+                <Link to="/volunteerRequest">
+                  <a className="btn text-black border-none"> Volunteer Requested</a>
                 </Link>
             </div>
             <button
