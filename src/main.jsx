@@ -18,6 +18,7 @@ import { Toaster } from 'sonner';
 import AddVolunteer from './Components/AddVolunteer/AddVolunteer';
 import MyPost from './Components/MyPost/MyPost';
 import VolunteerRequest from './Components/VolunteerRequest/VolunteerRequest';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/myPost",
-        element: <MyPost></MyPost>
+        element: <PrivateRoute>
+          <MyPost></MyPost>
+        </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/userCollection')
       },
       {
         path: "/volunteerRequest",
