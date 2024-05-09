@@ -1,0 +1,20 @@
+.css {
+    width: 50%;
+    height: 70vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .css {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .css {
+        width: 50%;
+    }
+}

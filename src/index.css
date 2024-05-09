@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+body {
+    font-family: "Mulish", sans-serif;
+}
+.userDropDown {
+    position: absolute;
+    z-index: 9999;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 5px 5px #00264214;
+    top: 53px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 0px;
+    overflow: hidden;
+    transition: 0.3s;
+    width: auto;
+    padding: 0px;
+}
+
+.showDropdown {
+    height: auto !important;
+    padding: 50px !important;
+    transition: 0.3s;
+}
+.userDropDown a:hover {
+    background-color: #c0c0c047;
+}
+
+
+
+
+
+
+
+
+
+
+
+
