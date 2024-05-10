@@ -19,6 +19,8 @@ import AddVolunteer from './Components/AddVolunteer/AddVolunteer';
 import MyPost from './Components/MyPost/MyPost';
 import VolunteerRequest from './Components/VolunteerRequest/VolunteerRequest';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import NeedsVolunteerDetails from './Components/NeedsVolunteer/NeedsVolunteerDetails';
+import NeedVolunteerPage from './Components/ NeedVolunteerPage/ NeedVolunteerPage';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,13 @@ const router = createBrowserRouter([
         element: <AddVolunteer></AddVolunteer>
       },
       {
+        path: "/NeedVolunteer",
+        element: <PrivateRoute>
+          <NeedVolunteerPage></NeedVolunteerPage>
+        </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/userCollection')
+      },
+      {
         path: "/myPost",
         element: <PrivateRoute>
           <MyPost></MyPost>
@@ -61,6 +70,13 @@ const router = createBrowserRouter([
         path: "/volunteerRequest",
         element: <VolunteerRequest></VolunteerRequest>
       },
+      {
+        path: "/needsVolunteerDetails/:_id",
+        element: <PrivateRoute>
+          <NeedsVolunteerDetails></NeedsVolunteerDetails>
+        </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/needsVolunteer')
+      }
     ]
   },
 ]);
