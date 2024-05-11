@@ -21,6 +21,7 @@ import VolunteerRequest from './Components/VolunteerRequest/VolunteerRequest';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import NeedsVolunteerDetails from './Components/NeedsVolunteer/NeedsVolunteerDetails';
 import NeedVolunteerPage from './Components/ NeedVolunteerPage/ NeedVolunteerPage';
+import UpdateVolunteer from './Components/UpdateVolunteer/UpdateVolunteer';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,13 @@ const router = createBrowserRouter([
         element: <AddVolunteer></AddVolunteer>
       },
       {
+        path: "/updateVolunteer/:id",
+        element: <PrivateRoute>
+          <UpdateVolunteer></UpdateVolunteer>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/userCollection/${params.id}`)
+      },
+      {
         path: "/NeedVolunteer",
         element: <PrivateRoute>
           <NeedVolunteerPage></NeedVolunteerPage>
@@ -64,7 +72,6 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <MyPost></MyPost>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/userCollection')
       },
       {
         path: "/volunteerRequest",

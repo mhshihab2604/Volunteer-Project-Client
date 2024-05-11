@@ -1,7 +1,3 @@
-// import { FaUserAlt } from "react-icons/fa";
-// import { MdDateRange } from "react-icons/md";
-// import { PiSquareLogoBold } from "react-icons/pi";
-// import { BsFillTagFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { IoLocationSharp } from "react-icons/io5";
 

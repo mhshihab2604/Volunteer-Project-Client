@@ -99,9 +99,6 @@ const Header = () => {
                 <Link to="/myPost">
                   <a className="btn text-black border-none">Manage My Post</a>
                 </Link>
-                {/* <Link to="/volunteerRequest">
-                  <a className="btn text-black border-none"> Volunteer Requested</a>
-                </Link> */}
             </div>
             <button
                 onClick={handleSignOut}

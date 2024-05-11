@@ -16,7 +16,7 @@ const NeedsVolunteerCard = ({needsVolunteer}) => {
     }, []);
 
 
-    const { _id, Thumbnail, Post_Title, Category, Deadline} = needsVolunteer;
+    const { _id, Thumbnail, PostTitle, Category, Deadline} = needsVolunteer;
     return (
         <div>
             <section>
@@ -43,7 +43,7 @@ const NeedsVolunteerCard = ({needsVolunteer}) => {
                     {isLoading ? (
                         <Skeleton width={100} />
                     ) : (
-                        <h2 className="card-title">{Post_Title}</h2>
+                        <h2 className="card-title text-sm">{PostTitle}</h2>
                     )}
                     {isLoading ? (
                         <Skeleton width="full" height={50} />

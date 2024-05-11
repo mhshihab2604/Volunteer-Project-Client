@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2'
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 import useAuth from '../../Components/useAuth/useAuth';
@@ -42,21 +41,6 @@ const AddVolunteer = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
-                // fetch('https://assignment-10-server-nine-nu.vercel.app/userCraft', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type' : 'application/json'
-                //     },
-                //     body: JSON.stringify({thumbnail, volunteers_needed, deadline, organizer_name , organizer_email:user?.email})
-                // })
-                // .then(() => {
-                //     Swal.fire({
-                //         title: 'Success!',
-                //         text: 'Add Post Successfully',
-                //         icon: 'success',
-                //         confirmButtonText: 'Cool'
-                //       })
-                // })
             }
         })
     }

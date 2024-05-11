@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyPostCard = ({volunteer}) => {
-    const {_id,postTitle, location, category, organizer_name,} = volunteer;
+const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
+    const {_id,postTitle, location, category, organizer_name,} = volunteer || {};
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
@@ -27,8 +28,8 @@ const MyPostCard = ({volunteer}) => {
                             text: "Your Post has been deleted.",
                             icon: "success"
                         });
-                        // const remaining = crafts.filter(craf => craf._id !== _id);
-                        // setCrafts(remaining)
+                        const remaining = volunteers.filter(volun => volun._id !== _id);
+                        setVolunteers(remaining)
                     }
                 })
             }
@@ -60,21 +61,21 @@ const MyPostCard = ({volunteer}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="bg-white text-black">
-                            <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
-                                {postTitle}
-                            </th>
-                            <td className="px-6 py-4">
-                                {organizer_name}
+                        <tr className="bg-white text-black ">
+                            <td scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
+                                <p>{postTitle}</p>
                             </td>
                             <td className="px-6 py-4">
-                                {category}
+                                <p>{organizer_name}</p>
                             </td>
                             <td className="px-6 py-4">
-                                {location}
+                                <p>{category}</p>
+                            </td>
+                            <td className="px-6 py-4">
+                                <p>{location}</p>
                             </td>
                             <td scope="col" className="px-6 py-3">
-                                <button className="btn bg-[#38AA95] text-white">Update</button>
+                                <Link to={`/updateVolunteer/${_id}`}><button className="btn bg-[#38AA95] text-white">Update</button></Link>
                             </td>
                             <td scope="col" className="px-6 py-3">
                                 <button onClick={() => handleDelete(_id)} className="btn bg-[#38AA95] text-white">Delete</button>
@@ -83,7 +84,6 @@ const MyPostCard = ({volunteer}) => {
                     </tbody>
                 </table>
             </div>
-
         </div>
     );
 };
