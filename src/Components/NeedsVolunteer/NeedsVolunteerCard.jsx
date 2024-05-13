@@ -2,7 +2,15 @@ import { useEffect, useState } from "react";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { Link } from "react-router-dom";
+
+import Aos from "aos";
+import 'aos/dist/aos.css'
 const NeedsVolunteerCard = ({needsVolunteer}) => {
+
+    useEffect(() => {
+        Aos.init({ duration: 2000 })
+    }, [])
+
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -24,7 +32,7 @@ const NeedsVolunteerCard = ({needsVolunteer}) => {
                     {isLoading ? (
                     <Skeleton height={200} />
                     ) : (
-                    <figure><img className="h-[280px] w-full" src={Thumbnail} alt="Job" /></figure>
+                    <figure><img className="h-[280px] w-full" src={Thumbnail} alt="Job" data-aos="zoom-in"/></figure>
                     )}
                     <div className="card-body space-y-2">
 

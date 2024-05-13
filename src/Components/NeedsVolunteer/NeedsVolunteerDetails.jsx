@@ -23,7 +23,7 @@ const NeedsVolunteerDetails = () => {
                         <h2 className="text-center text-2xl font-medium">Category: {Volunteer.Category}</h2>
                     </div>
                 </div>
-                <Link to="/"><button className="btn w-full text-white bg-[#38AA95]">Be A Volunteer</button></Link>
+                <Link to={`/beVolunteerPage/${_id}`}><button className="btn w-full text-white bg-[#38AA95]">Be A Volunteer</button></Link>
             </div>
         </section>
     </div>

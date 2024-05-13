@@ -27,7 +27,7 @@ const SearchVolunteer = () => {
 
   return (
     <div>
-      <div className="py-10 mx-5 md:mx-15 my-5 md:my-15">
+      <div className="py-10 mx-5 md:mx-15 my-5 md:my-15 mt-24">
         <h2 className="lg:text-4xl text-2xl text-center font-medium">
           All Services
         </h2>

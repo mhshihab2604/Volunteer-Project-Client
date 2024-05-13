@@ -36,54 +36,32 @@ const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
         })};
     return (
         <div>
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs uppercase bg-[#38AA95] text-white font-semibold">
-                        <tr>
-                            <th scope="col" className="px-6 py-3">
-                                Post Title
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Organizer Name
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Category
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Location
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Update
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Delete
-                            </th>
+            <table className="min-w-[90%] shadow-md  border mx-auto border-gray-100  my-6">
+                    <thead>
+                        <tr className="bg-[#38AA95] text-white">
+                            <th className="py-3 px-6 text-left border-b">Post Title</th>
+                            <th className="py-3 px-6 text-left border-b">Organizer Name</th>
+                            <th className="py-3 px-6 text-left border-b">Category</th>
+                            <th className="py-3 px-6  border-b text-end">Location</th>
+                            <th className="py-3 px-6  border-b text-end">Update</th>
+                            <th className="py-3 px-6  border-b text-end">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="bg-white text-black ">
-                            <td scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
-                                <p>{postTitle}</p>
+                        <tr className="hover:bg-gray-50 transition duration-300">
+                            <td className="py-4 px-6 border-b">{postTitle}</td>
+                            <td className="py-4 px-6 border-b">{organizer_name}</td>
+                            <td className="py-4 px-6 border-b">{category}</td>
+                            <td className="py-4 px-6 border-b">{location}</td>
+                            <td className="py-4 px-6 border-b">
+                                <Link to={`/updateVolunteer/${_id}`}><button className="btn bg-[#38AA95] text-white">Update</button></Link>  
                             </td>
-                            <td className="px-6 py-4">
-                                <p>{organizer_name}</p>
-                            </td>
-                            <td className="px-6 py-4">
-                                <p>{category}</p>
-                            </td>
-                            <td className="px-6 py-4">
-                                <p>{location}</p>
-                            </td>
-                            <td scope="col" className="px-6 py-3">
-                                <Link to={`/updateVolunteer/${_id}`}><button className="btn bg-[#38AA95] text-white">Update</button></Link>
-                            </td>
-                            <td scope="col" className="px-6 py-3">
-                                <button onClick={() => handleDelete(_id)} className="btn bg-[#38AA95] text-white">Delete</button>
+                            <td className="py-4 px-6 border-b text-end">
+                                <button onClick={() => handleDelete(_id)} className="btn bg-[#38AA95] text-white">Delete</button> 
                             </td>
                         </tr>
                     </tbody>
-                </table>
-            </div>
+            </table>
         </div>
     );
 };

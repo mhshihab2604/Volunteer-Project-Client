@@ -22,6 +22,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import NeedsVolunteerDetails from './Components/NeedsVolunteer/NeedsVolunteerDetails';
 import NeedVolunteerPage from './Components/ NeedVolunteerPage/ NeedVolunteerPage';
 import UpdateVolunteer from './Components/UpdateVolunteer/UpdateVolunteer';
+import BeVolunteerPage from './Components/BeVolunteerPage/BeVolunteerPage';
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/addVolunteer",
-        element: <AddVolunteer></AddVolunteer>
+        element: <PrivateRoute>
+          <AddVolunteer></AddVolunteer>
+        </PrivateRoute>
       },
       {
         path: "/updateVolunteer/:id",
@@ -75,7 +78,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/volunteerRequest",
-        element: <VolunteerRequest></VolunteerRequest>
+        element: <PrivateRoute>
+          <VolunteerRequest></VolunteerRequest>
+        </PrivateRoute>,
       },
       {
         path: "/needsVolunteerDetails/:_id",
@@ -83,7 +88,14 @@ const router = createBrowserRouter([
           <NeedsVolunteerDetails></NeedsVolunteerDetails>
         </PrivateRoute>,
         loader: () => fetch('http://localhost:5000/needsVolunteer')
-      }
+      },
+      {
+        path: "/beVolunteerPage/:id",
+        element: <PrivateRoute>
+          <BeVolunteerPage></BeVolunteerPage>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/needsVolunteer/${params.id}`)
+      },
     ]
   },
 ]);

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import MyPostCard from "./MyPostCard";
 import { useEffect, useState } from "react";
 
@@ -11,6 +12,9 @@ const MyPost = () => {
     },[])
     return (
         <div>
+            <Helmet>
+                <title>My Post</title>
+            </Helmet>
             <section className='mt-16 mx-6'>
                 <h2 className="lg:text-4xl text-2xl text-center font-medium">My Post</h2>
                 <div className="mt-10">
