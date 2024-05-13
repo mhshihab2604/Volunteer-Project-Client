@@ -4,7 +4,6 @@ const VolunteerRequestCard = ({submit,handleDelete}) => {
         PostTitle,
         Deadline,
         Category,
-        Status,
         PostId,
         Thumbnail} = submit || {};
     return (
@@ -27,12 +26,6 @@ const VolunteerRequestCard = ({submit,handleDelete}) => {
                             </td>
                             <td className="py-4 px-6 border-b text-sm font-medium">{Deadline}</td>
                             <td className="py-4 px-6 border-b text-sm font-medium">{Category}</td>
-                            <td className="py-4 px-6 border-b text-end">
-                                {
-                                    Status === 'confirm' ? <span className="font-bold text-primary">Confirm</span>:
-                                    <button
-                                    className="bg-[#38AA95] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">Please Confirm</button>}
-                            </td>
                         </tr>
                     </tbody>
                 </table>

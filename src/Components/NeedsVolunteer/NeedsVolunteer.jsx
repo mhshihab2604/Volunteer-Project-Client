@@ -4,13 +4,14 @@ import NeedsVolunteerCard from "./NeedsVolunteerCard";
 import { Link } from "react-router-dom";
 
 const NeedsVolunteer = () => {
+    const [sorting, setSorting] = useState("0")
     const [needsVolunteer, setNeedsVolunteer] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/needsVolunteer')
+        fetch(`http://localhost:5000/needsVolunteer?sort=${sorting}`)
             .then(res => res.json())
             .then(data => setNeedsVolunteer(data));
-    },[])
+    },[sorting])
     return (
         <div>
             <div className="mt-20">
@@ -18,8 +19,16 @@ const NeedsVolunteer = () => {
                     <h1 className='lg:text-4xl text-2xl text-center font-medium'>Volunteer Needs Now</h1>
                     <p>The majority of volunteer management platforms have undergone alterations, <br /> often impacted by injected humor or randomized words that lack believability</p>
                 </div>
+                <div className="max-w-6xl mx-auto mt-10">
+                    <h1 className="text-2xl">Filter :</h1>
+                    <select className="p-2 border-2 w-36 bg-[#38AA95] text-white border-indigo-300 rounded" value={sorting} onChange={(e) => setSorting(e.target.value)}>
+                        <option value="0">All</option>
+                        <option value="1">New First</option>
+                        <option value="-1">OldFirst</option>
+                    </select>
+                </div>
                 <div className="mx-auto container">
-                    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-10">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-5">
                         {
                             needsVolunteer?.slice(0, 6).map(needsVolunteer => <NeedsVolunteerCard key={needsVolunteer._id} needsVolunteer={needsVolunteer}></NeedsVolunteerCard>)
                         }

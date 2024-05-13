@@ -42,9 +42,9 @@ const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
                             <th className="py-3 px-6 text-left border-b">Post Title</th>
                             <th className="py-3 px-6 text-left border-b">Organizer Name</th>
                             <th className="py-3 px-6 text-left border-b">Category</th>
-                            <th className="py-3 px-6  border-b text-end">Location</th>
-                            <th className="py-3 px-6  border-b text-end">Update</th>
-                            <th className="py-3 px-6  border-b text-end">Delete</th>
+                            <th className="py-3 px-6  border-b text-left">Location</th>
+                            <th className="py-3 px-6  border-b text-left">Update</th>
+                            <th className="py-3 px-6  border-b text-left">Delete</th>
                         </tr>
                     </thead>
                     <tbody>

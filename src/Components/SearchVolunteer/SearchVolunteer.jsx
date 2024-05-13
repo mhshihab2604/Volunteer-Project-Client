@@ -3,6 +3,7 @@ import NeedsVolunteerCard from "../NeedsVolunteer/NeedsVolunteerCard";
 
 const SearchVolunteer = () => {
   const [needsVolunteer, setNeedsVolunteer] = useState([]);
+  
   const [searchQuery, setSearchQuery] = useState("");
   const [showMore, setShowMore] = useState(false);
   const searchRef = useRef(null);
