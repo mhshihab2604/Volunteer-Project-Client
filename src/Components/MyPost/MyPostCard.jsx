@@ -35,7 +35,7 @@ const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
             }
         })};
     return (
-        <div>
+        <div className="overflow-x-auto ">
             <table className="min-w-[90%] shadow-md  border mx-auto border-gray-100  my-6">
                     <thead>
                         <tr className="bg-[#38AA95] text-white">
