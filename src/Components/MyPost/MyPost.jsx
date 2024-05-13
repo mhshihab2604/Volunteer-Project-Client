@@ -1,12 +1,14 @@
 import { Helmet } from "react-helmet";
 import MyPostCard from "./MyPostCard";
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const MyPost = () => {
     const [volunteers, setVolunteers] = useState();
-
+    const {user} = useContext(AuthContext)
     useEffect(() => {
-        fetch('http://localhost:5000/userCollection')
+        fetch(`http://localhost:5000/myPost/${user.email}`)
             .then(res => res.json())
             .then(data => setVolunteers(data));
     },[])

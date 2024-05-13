@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
-    const {_id,postTitle, location, category, organizer_name,} = volunteer || {};
+    const {_id,PostTitle, Location, Category,  OrganizerName} = volunteer || {};
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
@@ -49,10 +49,10 @@ const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
                     </thead>
                     <tbody>
                         <tr className="hover:bg-gray-50 transition duration-300">
-                            <td className="py-4 px-6 border-b">{postTitle}</td>
-                            <td className="py-4 px-6 border-b">{organizer_name}</td>
-                            <td className="py-4 px-6 border-b">{category}</td>
-                            <td className="py-4 px-6 border-b">{location}</td>
+                            <td className="py-4 px-6 border-b">{PostTitle}</td>
+                            <td className="py-4 px-6 border-b">{OrganizerName}</td>
+                            <td className="py-4 px-6 border-b">{Category}</td>
+                            <td className="py-4 px-6 border-b">{Location}</td>
                             <td className="py-4 px-6 border-b">
                                 <Link to={`/updateVolunteer/${_id}`}><button className="btn bg-[#38AA95] text-white">Update</button></Link>  
                             </td>

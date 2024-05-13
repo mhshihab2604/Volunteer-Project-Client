@@ -68,7 +68,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <NeedVolunteerPage></NeedVolunteerPage>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/userCollection')
+        // loader: () => fetch('http://localhost:5000/userCollection')
       },
       {
         path: "/myPost",

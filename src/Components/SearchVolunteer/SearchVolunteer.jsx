@@ -1,13 +1,11 @@
 import {useEffect, useRef, useState} from "react";
-import {useLoaderData} from "react-router-dom";
 import NeedsVolunteerCard from "../NeedsVolunteer/NeedsVolunteerCard";
 
 const SearchVolunteer = () => {
-  const initialServices = useLoaderData();
-  const [needsVolunteer, setNeedsVolunteer] = useState(initialServices);
+  const [needsVolunteer, setNeedsVolunteer] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [showMore, setShowMore] = useState(false);
-    const searchRef = useRef(null);
+  const searchRef = useRef(null);
   const handleSearch = () => {
    const value = searchRef.current.value
    setSearchQuery(value);

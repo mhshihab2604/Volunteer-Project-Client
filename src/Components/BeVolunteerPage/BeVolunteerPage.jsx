@@ -1,13 +1,16 @@
-import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import { toast } from "sonner";
 
 
 const BeVolunteerPage = () => {
+    const {id} = useParams()
     const volunteer = useLoaderData()
     const {PostTitle, Deadline, Location, Category, OrganizerName, OrganizerEmail, VolunteersNeeded, Description, Thumbnail} = volunteer || {};
     const {user} = useContext(AuthContext);
-
+    console.log("jjjj", id);
+    const [volunteerAvailable, setVolunteerAvailable] = useState(VolunteersNeeded)
     const handleSubmitService = e => {
         e.preventDefault();
         const form = e.target;
@@ -20,12 +23,15 @@ const BeVolunteerPage = () => {
         const OrganizerName = form.OrganizerName.value;        
         const OrganizerEmail = form.OrganizerEmail.value;        
         const Suggestion = form.Suggestion.value;        
-        const VolunteersNeeded = form.VolunteersNeeded.value;        
+        // const VolunteersNeeded = form.VolunteersNeeded.value;        
         const Status = form.Status.value;        
         const Description = form.Description.value;        
         const Thumbnail = form.Thumbnail.value;        
-         
+       if(!VolunteersNeeded > 0){
+        return toast.error('Volunteer Limit Reached')
+       }
         const submit = {
+            PostId:id,
             name,
             email,
             PostTitle,
@@ -42,7 +48,7 @@ const BeVolunteerPage = () => {
         }
         console.log(submit);  
         
-        fetch('http://localhost:5000/submit', {
+        fetch(`http://localhost:5000/submit/${id}?volunteer=${volunteerAvailable}`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -54,6 +60,8 @@ const BeVolunteerPage = () => {
             console.log(data);
             if(data.insertedId){
                 alert('Submit Volunteer Successfully')
+                const availableVolNum = parseInt(volunteerAvailable)
+                setVolunteerAvailable(availableVolNum-1)
             }
         })
     }
@@ -97,7 +105,7 @@ const BeVolunteerPage = () => {
                         </div>
                         <div>
                             <label htmlFor="volunteersNeeded" className="block mb-1 ml-1">Volunteers Needed</label>
-                            <input id="VolunteersNeeded" name="VolunteersNeeded" defaultValue={VolunteersNeeded} type="text" placeholder="Volunteers Needed" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-[#FF3811] dark:bg-gray-100" />
+                            <input id="VolunteersNeeded" name="VolunteersNeeded" value={volunteerAvailable} type="text" placeholder="Volunteers Needed" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-[#FF3811] dark:bg-gray-100" />
                         </div>
                         <div>
                             <label htmlFor="status" className="block mb-1 ml-1">Status</label>

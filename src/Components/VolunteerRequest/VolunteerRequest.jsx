@@ -11,10 +11,10 @@ const VolunteerRequest = () => {
         .then(res => res.json())
         .then(data => setSubmits(data))
     },[])
-    const handleDelete = id => {
+    const handleDelete = (id,PostId) => {
         const proceed = confirm('Are You Sure You Want To Delete');
         if(proceed){
-            fetch(`http://localhost:5000/submit/${id}`,{
+            fetch(`http://localhost:5000/submit/${id}/${PostId}`,{
                 method: "DELETE"
             })
             .then(res => res.json())

@@ -12,19 +12,19 @@ const AddVolunteer = () => {
     const handleAddVolunteer = e => {
         e.preventDefault();
         const form = e.target;
-        const postTitle = form.postTitle.value;
-        const location = form.location.value;
-        const volunteers_needed = form.volunteers_needed.value;
-        const category = form.category.value;
-        const deadline = form.deadline.value;
-        const organizer_name = form.organizer_name.value;
-        const organizer_email = form.organizer_email.value;
-        const description = form.description.value;
-        const thumbnail = form.thumbnail.value;
-        const newVolunteer = {postTitle, location, volunteers_needed, category, deadline, organizer_name, organizer_email, description, thumbnail}
+        const PostTitle = form.postTitle.value;
+        const Location = form.location.value;
+        const VolunteersNeeded = form.volunteers_needed.value;
+        const Category = form.category.value;
+        const Deadline = form.deadline.value;
+        const OrganizerName = form.organizer_name.value;
+        const OrganizerEmail = form.organizer_email.value;
+        const Description = form.description.value;
+        const Thumbnail = form.thumbnail.value;
+        const newVolunteer = {PostTitle, Location, VolunteersNeeded:parseInt(VolunteersNeeded), Category, Deadline, OrganizerName, OrganizerEmail, Description, Thumbnail}
         console.log(newVolunteer);
         // send data to the server
-        fetch('http://localhost:5000/userCollection', {
+        fetch('http://localhost:5000/addPost', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
