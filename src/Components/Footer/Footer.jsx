@@ -1,6 +1,9 @@
 import { IoIosCall } from "react-icons/io";
 import { BiSolidMessage } from "react-icons/bi";
 import { GoClockFill } from "react-icons/go";
+import { FaInstagram } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa6";
 const Footer = () => {
     return (
         <div>
@@ -44,6 +47,16 @@ const Footer = () => {
                         <a className="link link-hover hover:text-[#38AA95]">Cookie policy</a>
                     </nav>
                 </div>
+                <nav className="pt-5">
+                    <div className="grid grid-flow-col gap-4 justify-center">
+                        <a><FaInstagram className="text-2xl hover:text-[#38AA95]"></FaInstagram></a>
+                        <a><FaGithub className="text-2xl hover:text-[#38AA95]"></FaGithub></a>
+                        <a><FaFacebook className="text-2xl hover:text-[#38AA95]"></FaFacebook></a>
+                    </div>
+                </nav> 
+                <aside className="pt-5">
+                    <p className="text-center">Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+                </aside>
             </footer>
         </div>
     );
