@@ -5,12 +5,14 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import useAuth from '../../Components/useAuth/useAuth';
+import { useNavigate } from 'react-router-dom';
 const AddVolunteer = () => {
     const [startDate, setStartDate] = useState(new Date());
 
     const {user} = useAuth();
+    const navigate = useNavigate();
     const handleAddVolunteer = e => {
-        e.preventDefault();
+        e.preventDefault(); 
         const form = e.target;
         const PostTitle = form.postTitle.value;
         const Location = form.location.value;
@@ -41,6 +43,7 @@ const AddVolunteer = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                navigate("/myPost")
             }
         })
     }

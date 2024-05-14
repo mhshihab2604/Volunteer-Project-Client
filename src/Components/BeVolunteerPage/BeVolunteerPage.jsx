@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { toast } from "sonner";
 
 
 const BeVolunteerPage = () => {
+    const navigate = useNavigate()
     const {id} = useParams()
     const volunteer = useLoaderData()
     const {PostTitle, Deadline, Location, Category, OrganizerName, OrganizerEmail, VolunteersNeeded, Description, Thumbnail} = volunteer || {};
@@ -59,6 +60,7 @@ const BeVolunteerPage = () => {
             console.log(data);
             if(data.insertedId){
                 toast.success("Submit Successfully")
+                navigate("/volunteerRequest")
                 const availableVolNum = parseInt(volunteerAvailable)
                 setVolunteerAvailable(availableVolNum-1)
             }
