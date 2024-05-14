@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import NeedsVolunteerCard from "./NeedsVolunteerCard";
 import { Link } from "react-router-dom";
-
+import { Typewriter } from 'react-simple-typewriter'
 
 const NeedsVolunteer = () => {
     const [sorting, setSorting] = useState("0")
@@ -13,11 +13,26 @@ const NeedsVolunteer = () => {
             .then(res => res.json())
             .then(data => setNeedsVolunteer(data));
     },[sorting])
+      const handleDone = () => {
+        console.log(`Done after 5 loops!`)
+      }
     return (
         <div>
             <div className="mt-20">
                 <div className='text-center space-y-4'>
-                    <h1 className='lg:text-4xl text-2xl text-center font-medium'>Volunteer Needs Now</h1>
+                    <h1 className='lg:text-4xl text-2xl text-center font-medium'>Volunteer  
+                    <span className="ml-2" style={{ color: '#38AA95', fontWeight: 'medium' }}>
+                    <Typewriter
+                    words={['Needs', 'Now']}
+                    loop={Infinity}
+                    cursor
+                    cursorStyle='|'
+                    typeSpeed={50}
+                    deleteSpeed={40}
+                    delaySpeed={1200}
+                    onLoopDone={handleDone}
+                    />
+                    </span></h1>
                     <p>The majority of volunteer management platforms have undergone alterations, <br /> often impacted by injected humor or randomized words that lack believability</p>
                 </div>
                 <div className="max-w-6xl flex justify-center gap-2 items-center mx-auto mt-10">
