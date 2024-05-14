@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import VolunteerRequestCard from "./VolunteerRequestCard";
 import { Helmet } from 'react-helmet';
+import { toast } from "sonner";
 const VolunteerRequest = () => {
     const {user} = useContext(AuthContext);
     const url = `http://localhost:5000/submit?email=${user?.email}`;
@@ -12,7 +13,7 @@ const VolunteerRequest = () => {
         .then(data => setSubmits(data))
     },[])
     const handleDelete = (id,PostId) => {
-        const proceed = confirm('Are You Sure You Want To Delete');
+        const proceed = toast.message("Cancel Successfully");
         if(proceed){
             fetch(`http://localhost:5000/submit/${id}/${PostId}`,{
                 method: "DELETE"
@@ -21,7 +22,7 @@ const VolunteerRequest = () => {
             .then(data => {
                 console.log(data);
                 if(data.deletedCount > 0){
-                    alert('Deleted Successfully')
+                    toast.success("Cancel Successfully")
                     const remaining = submits.filter(submit => submit._id !== id);
                     setSubmits(remaining);
                 }

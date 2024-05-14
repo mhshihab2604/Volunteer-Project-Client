@@ -13,7 +13,7 @@ const VolunteerRequestCard = ({submit,handleDelete}) => {
                     <tbody>
                         <tr className="hover:bg-gray-50 border-b transition duration-300">
                             <td className="p-5">
-                                <button onClick={() => handleDelete(_id,PostId)} className="bg-[#38AA95] hover:scale-110 scale-100 transition-all duration-100  py-2 px-4 rounded-md text-white">cancel</button>
+                                <button onClick={() => handleDelete(_id,PostId)} className="bg-[#38AA95] hover:scale-110 scale-100 transition-all duration-100  py-2 px-4 rounded-md text-white">Cancel</button>
                             </td>
                             <td className="py-4 px-4 flex justify-start">
                                 <img
@@ -35,3 +35,6 @@ const VolunteerRequestCard = ({submit,handleDelete}) => {
 };
 
 export default VolunteerRequestCard;
+
+
+

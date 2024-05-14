@@ -56,7 +56,7 @@ const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
                             <td className="py-4 px-6 border-b">
                                 <Link to={`/updateVolunteer/${_id}`}><button className="btn bg-[#38AA95] text-white">Update</button></Link>  
                             </td>
-                            <td className="py-4 px-6 border-b text-end">
+                            <td className="py-4 px-6 border-b">
                                 <button onClick={() => handleDelete(_id)} className="btn bg-[#38AA95] text-white">Delete</button> 
                             </td>
                         </tr>
@@ -67,3 +67,4 @@ const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
 };
 
 export default MyPostCard;
+

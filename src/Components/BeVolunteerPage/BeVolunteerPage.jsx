@@ -22,8 +22,7 @@ const BeVolunteerPage = () => {
         const Category = form.Category.value;        
         const OrganizerName = form.OrganizerName.value;        
         const OrganizerEmail = form.OrganizerEmail.value;        
-        const Suggestion = form.Suggestion.value;        
-        // const VolunteersNeeded = form.VolunteersNeeded.value;        
+        const Suggestion = form.Suggestion.value;               
         const Status = form.Status.value;        
         const Description = form.Description.value;        
         const Thumbnail = form.Thumbnail.value;        
@@ -59,7 +58,7 @@ const BeVolunteerPage = () => {
         .then(data => {
             console.log(data);
             if(data.insertedId){
-                alert('Submit Volunteer Successfully')
+                toast.success("Submit Successfully")
                 const availableVolNum = parseInt(volunteerAvailable)
                 setVolunteerAvailable(availableVolNum-1)
             }
