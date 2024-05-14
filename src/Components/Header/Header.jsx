@@ -77,12 +77,14 @@ useEffect(() => {
                 </Link>
             </ul>
           </div>
-          <div className="flex justify-center -space-x-6 items-center">
-            <img className="w-24" src={myImage} alt="" />
-            <div className="bg-gradient-to-r from-[#03cdb5] to-[#C8143A] text-transparent bg-clip-text">
-                <a className=" text-sm lg:text-xl font-extrabold">Volunify</a>
+          <Link to="/">
+            <div className="flex justify-center -space-x-6 items-center">
+              <img className="w-24" src={myImage} alt="" />
+              <div className="bg-gradient-to-r from-[#03cdb5] to-[#C8143A] text-transparent bg-clip-text">
+                  <a className=" text-sm lg:text-xl font-extrabold">Volunify</a>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-black gap-5">
