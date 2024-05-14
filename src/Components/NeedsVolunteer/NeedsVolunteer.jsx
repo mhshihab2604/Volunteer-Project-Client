@@ -20,7 +20,7 @@ const NeedsVolunteer = () => {
                     <h1 className='lg:text-4xl text-2xl text-center font-medium'>Volunteer Needs Now</h1>
                     <p>The majority of volunteer management platforms have undergone alterations, <br /> often impacted by injected humor or randomized words that lack believability</p>
                 </div>
-                <div className="max-w-6xl mx-auto mt-10">
+                <div className="max-w-6xl mx-auto mt-10 ml-10">
                     <h1 className="text-2xl">Filter :</h1>
                     <select className="p-2 border-2 w-36 bg-[#38AA95] text-white border-indigo-300 rounded" value={sorting} onChange={(e) => setSorting(e.target.value)}>
                         <option value="0">All</option>

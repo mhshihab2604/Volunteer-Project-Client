@@ -49,9 +49,9 @@ const Footer = () => {
                 </div>
                 <nav className="pt-5">
                     <div className="grid grid-flow-col gap-4 justify-center">
-                        <a><FaInstagram className="text-2xl hover:text-[#38AA95]"></FaInstagram></a>
-                        <a><FaGithub className="text-2xl hover:text-[#38AA95]"></FaGithub></a>
-                        <a><FaFacebook className="text-2xl hover:text-[#38AA95]"></FaFacebook></a>
+                        <a href="https://www.instagram.com/mhshihab2604/"><FaInstagram className="text-2xl hover:text-[#38AA95]"></FaInstagram></a>
+                        <a href="https://github.com/mhshihab2604"><FaGithub className="text-2xl hover:text-[#38AA95]"></FaGithub></a>
+                        <a href="https://www.facebook.com/mhshihab2604"><FaFacebook className="text-2xl hover:text-[#38AA95]"></FaFacebook></a>
                     </div>
                 </nav> 
                 <aside className="pt-5">

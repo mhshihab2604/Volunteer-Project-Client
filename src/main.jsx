@@ -44,11 +44,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateProfile",
-        element: <UpdateProfile></UpdateProfile>
+        element: <PrivateRoute>
+          <UpdateProfile></UpdateProfile>
+        </PrivateRoute>
       },
       {
         path: "/userProfile",
-        element: <UserProfile></UserProfile>
+        element: <PrivateRoute>
+          <UserProfile></UserProfile>
+        </PrivateRoute>
       },
       {
         path: "/addVolunteer",
@@ -65,10 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/NeedVolunteer",
-        element: <PrivateRoute>
-          <NeedVolunteerPage></NeedVolunteerPage>
-        </PrivateRoute>,
-        // loader: () => fetch('http://localhost:5000/userCollection')
+        element: <NeedVolunteerPage></NeedVolunteerPage>
       },
       {
         path: "/myPost",
