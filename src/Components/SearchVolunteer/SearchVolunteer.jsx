@@ -23,7 +23,7 @@ const SearchVolunteer = () => {
   const visibleServices = showMore ? needsVolunteer : needsVolunteer.slice(0, 3);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/needsVolunteer?search=${searchQuery}`)
+        fetch(`https://assignment-11-server-one-pied.vercel.app/needsVolunteer?search=${searchQuery}`)
             .then(res => res.json())
             .then(data => setNeedsVolunteer(data));
     },[searchQuery])

@@ -26,7 +26,7 @@ const AddVolunteer = () => {
         const newVolunteer = {PostTitle, Location, VolunteersNeeded:parseInt(VolunteersNeeded), Category, Deadline, OrganizerName, OrganizerEmail, Description, Thumbnail}
         console.log(newVolunteer);
         // send data to the server
-        fetch('http://localhost:5000/addPost', {
+        fetch('https://assignment-11-server-one-pied.vercel.app/addPost', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

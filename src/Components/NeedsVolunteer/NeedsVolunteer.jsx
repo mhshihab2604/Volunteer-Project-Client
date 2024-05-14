@@ -9,7 +9,7 @@ const NeedsVolunteer = () => {
     const [needsVolunteer, setNeedsVolunteer] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/needsVolunteer?sort=${sorting}`)
+        fetch(`https://assignment-11-server-one-pied.vercel.app/needsVolunteer?sort=${sorting}`)
             .then(res => res.json())
             .then(data => setNeedsVolunteer(data));
     },[sorting])

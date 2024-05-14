@@ -5,7 +5,7 @@ const LayoutTable = () => {
     const [needsVolunteer, setNeedsVolunteer] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/needsVolunteer')
+        fetch('https://assignment-11-server-one-pied.vercel.app/needsVolunteer')
             .then(res => res.json())
             .then(data => setNeedsVolunteer(data));
     },[])

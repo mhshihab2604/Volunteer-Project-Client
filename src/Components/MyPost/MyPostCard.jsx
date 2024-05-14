@@ -16,7 +16,7 @@ const MyPostCard = ({volunteer,volunteers,setVolunteers }) => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/userCollection/${_id}`,{
+            fetch(`https://assignment-11-server-one-pied.vercel.app/userCollection/${_id}`,{
                 method: 'DELETE'
             })
                 .then(res => res.json())

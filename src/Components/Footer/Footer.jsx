@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="footer items-center max-w-7xl mx-auto">
                     <aside className="space-y-4">
                         <p className="text-[#38AA95]">Contact us</p>
-                        <h1 className="text-2xl">Get in Touch</h1>
+                        <h1 className="text-2xl">Volunify</h1>
                         <div>
                             <h1 className="flex items-center gap-2"><IoIosCall className="text-[#38AA95]"></IoIosCall>Call us 1-800-555-1234</h1>
                             <h1 className="flex items-center gap-2"><BiSolidMessage className="text-[#38AA95]"></BiSolidMessage>info@example.com</h1>

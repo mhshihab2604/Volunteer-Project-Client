@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <UpdateVolunteer></UpdateVolunteer>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/userCollection/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-11-server-one-pied.vercel.app/userCollection/${params.id}`)
       },
       {
         path: "/NeedVolunteer",
@@ -88,14 +88,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <NeedsVolunteerDetails></NeedsVolunteerDetails>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/needsVolunteer')
+        loader: () => fetch('https://assignment-11-server-one-pied.vercel.app/needsVolunteer')
       },
       {
         path: "/beVolunteerPage/:id",
         element: <PrivateRoute>
           <BeVolunteerPage></BeVolunteerPage>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/needsVolunteer/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-11-server-one-pied.vercel.app/needsVolunteer/${params.id}`)
       },
     ]
   },

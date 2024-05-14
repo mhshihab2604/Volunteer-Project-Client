@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { toast } from "sonner";
 const VolunteerRequest = () => {
     const {user} = useContext(AuthContext);
-    const url = `http://localhost:5000/submit?email=${user?.email}`;
+    const url = `https://assignment-11-server-one-pied.vercel.app/submit?email=${user?.email}`;
     const [submits, setSubmits] = useState([]);
     useEffect(() =>{
         fetch(url)
@@ -15,7 +15,7 @@ const VolunteerRequest = () => {
     const handleDelete = (id,PostId) => {
         const proceed = toast.message("Cancel Successfully");
         if(proceed){
-            fetch(`http://localhost:5000/submit/${id}/${PostId}`,{
+            fetch(`https://assignment-11-server-one-pied.vercel.app/submit/${id}/${PostId}`,{
                 method: "DELETE"
             })
             .then(res => res.json())

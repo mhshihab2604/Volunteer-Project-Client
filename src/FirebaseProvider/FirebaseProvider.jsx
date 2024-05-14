@@ -63,7 +63,7 @@ const FirebaseProvider = ({children}) => {
             // if user exists then issue a token
             if (user) {
                 const loggedUser = { email: user.email }
-                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://assignment-11-server-one-pied.vercel.app/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log('token response', res.data);
                     })

@@ -22,7 +22,7 @@ const UpdateVolunteer = () => {
         const updateVolunteer = {PostTitle, Location, VolunteersNeeded:parseInt(VolunteersNeeded), Category, Deadline, OrganizerName, OrganizerEmail, Description, Thumbnail}
         console.log(updateVolunteer);
 
-        fetch(`http://localhost:5000/userCollection/${_id}`, {
+        fetch(`https://assignment-11-server-one-pied.vercel.app/userCollection/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

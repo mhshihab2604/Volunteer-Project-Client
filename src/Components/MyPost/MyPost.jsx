@@ -8,7 +8,7 @@ const MyPost = () => {
     const [volunteers, setVolunteers] = useState();
     const {user} = useContext(AuthContext)
     useEffect(() => {
-        fetch(`http://localhost:5000/myPost/${user.email}`)
+        fetch(`https://assignment-11-server-one-pied.vercel.app/myPost/${user.email}`)
             .then(res => res.json())
             .then(data => setVolunteers(data));
     },[])

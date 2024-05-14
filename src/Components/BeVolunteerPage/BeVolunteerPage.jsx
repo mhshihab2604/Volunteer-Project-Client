@@ -48,7 +48,7 @@ const BeVolunteerPage = () => {
         }
         console.log(submit);  
         
-        fetch(`http://localhost:5000/submit/${id}?volunteer=${volunteerAvailable}`, {
+        fetch(`https://assignment-11-server-one-pied.vercel.app/submit/${id}?volunteer=${volunteerAvailable}`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
