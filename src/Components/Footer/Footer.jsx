@@ -21,10 +21,12 @@ const Footer = () => {
                     </aside>
                     <nav>
                         <h6 className="footer-title">Company</h6>
-                        <a className="link link-hover hover:text-[#38AA95]">Home</a>
-                        <a className="link link-hover hover:text-[#38AA95]">All Properties</a>
-                        <a className="link link-hover hover:text-[#38AA95]">Login</a>
-                        <a className="link link-hover hover:text-[#38AA95]">Register</a>
+                        <a href="/" className="link link-hover hover:text-[#38AA95]">Home</a>
+                        <a href="/NeedVolunteer" className="link link-hover hover:text-[#38AA95]">Need Volunteer</a>
+                        <a href="/volunteerRequest" className="link link-hover hover:text-[#38AA95]">Volunteer Request</a>
+                        <a href="/userProfile" className="link link-hover hover:text-[#38AA95]">User Profile</a>
+                        <a href="/updateProfile" className="link link-hover hover:text-[#38AA95]">Update Profile</a>
+                        <a href="/register" className="link link-hover hover:text-[#38AA95]">Register</a>
                     </nav>
                     <nav>
                         <h6 className="footer-title"> APPS</h6>
@@ -34,11 +36,11 @@ const Footer = () => {
                         <a className="link link-hover hover:text-[#38AA95]">Android</a>
                     </nav>
                     <nav>
-                        <h6 className="footer-title">MANAGEMENT</h6>
-                        <a className="link link-hover hover:text-[#38AA95]">Estate business</a>
-                        <a className="link link-hover hover:text-[#38AA95]">Estate Window</a>
-                        <a className="link link-hover hover:text-[#38AA95]">Estate Iphone</a>
-                        <a className="link link-hover hover:text-[#38AA95]">Estate Android</a>
+                        <h6 className="footer-title">VOLUNTEER MANAGEMENT</h6>
+                        <a className="link link-hover hover:text-[#38AA95]">Volunteer Recruitment</a>
+                        <a className="link link-hover hover:text-[#38AA95]">Volunteer Training</a>
+                        <a className="link link-hover hover:text-[#38AA95]">Volunteer Opportunities</a>
+                        <a className="link link-hover hover:text-[#38AA95]">Volunteer Feedback</a>
                     </nav>
                     <nav>
                         <h6 className="footer-title">Legal</h6>

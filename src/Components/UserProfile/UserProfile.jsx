@@ -21,7 +21,7 @@ const UserProfile = () => {
                         </label>
 
                         <div className="userDetails">
-                            <h2 className="userName">Name:
+                            <h2 className="userName text-lg">Name:
                                 {user?.displayName || "unknown"}
                                 <LuPencil />
                             </h2>

@@ -67,7 +67,7 @@ useEffect(() => {
                     <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Volunteer Request</a>
                 </Link>
                 <Link to="/userProfile" className="flex">
-                    <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">My Profile</a>
+                    <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">User Profile</a>
                 </Link>
                 <Link to="/register" className="flex">
                     <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Register</a>
@@ -98,7 +98,7 @@ useEffect(() => {
                 <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Volunteer Request</a>
             </Link>
             <Link to="/userProfile" className="flex">
-                <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">My Profile</a>
+                <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">User Profile</a>
             </Link>
             <Link to="/register" className="flex">
                 <a rel="noopener noreferrer" href="" className="flex items-center px-4 -mb-1 hover:border-b-2 dark:border- hover:dark:text-[#38AA95] dark:border-[#38AA95]">Register</a>
