@@ -3,6 +3,7 @@ import NeedsVolunteerCard from "../NeedsVolunteer/NeedsVolunteerCard";
 import LayoutTable from "../LayoutTable/LayoutTable";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { MdTableRows } from "react-icons/md";
+import { Typewriter } from "react-simple-typewriter";
 
 const SearchVolunteer = () => {
   const [layout, setLayout] = useState("column");
@@ -28,11 +29,27 @@ const SearchVolunteer = () => {
             .then(data => setNeedsVolunteer(data));
     },[searchQuery])
 
+  const handleDone = () => {
+    console.log(`Done after 5 loops!`)
+  }
+
   return (
     <div>
       <div className="py-10 mx-5 md:mx-15 my-5 md:my-15 mt-20">
         <h2 className="lg:text-4xl text-2xl text-center font-medium">
-          All Services
+          All
+          <span className="ml-2" style={{ color: '#38AA95', fontWeight: 'medium' }}>
+              <Typewriter
+              words={['Services']}
+              loop={Infinity}
+              cursor
+              cursorStyle='|'
+              typeSpeed={50}
+              deleteSpeed={40}
+              delaySpeed={1200}
+              onLoopDone={handleDone}
+              />
+          </span>
         </h2>
 
         <div className="w-full md:w-2/5 flex mt-5 mx-auto">

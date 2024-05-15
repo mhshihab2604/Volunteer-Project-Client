@@ -1,10 +1,27 @@
+import { Typewriter } from "react-simple-typewriter";
 import "./OurTeam.css"
 const OurTeam = () => {
+    const handleDone = () => {
+        console.log(`Done after 5 loops!`)
+    }
     return (
         <div>
             <div className="text-black bg-[#E5F5F2] mt-28">
                 <div>
-                    <h1 className="lg:text-4xl text-2xl text-center font-medium pt-5">Our Team</h1>
+                    <h1 className="lg:text-4xl text-2xl text-center font-medium pt-5">Our
+                    <span className="ml-2" style={{ color: '#38AA95', fontWeight: 'medium' }}>
+                        <Typewriter
+                        words={['Team']}
+                        loop={Infinity}
+                        cursor
+                        cursorStyle='|'
+                        typeSpeed={50}
+                        deleteSpeed={40}
+                        delaySpeed={1200}
+                        onLoopDone={handleDone}
+                        />
+                    </span>
+                    </h1>
                 </div>
                 <div className="rows">
                     {/* <!-- Column 1--> */}
